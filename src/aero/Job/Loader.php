@@ -125,8 +125,8 @@ class Loader extends PluginBase implements Listener{
 			$player_data = $this->player->get($player->getName());
 			$job = $this->jobs->get($player_data["JobID"]);
 			if($player_data["Mode"] == "Goal"){
-				if(isset($job["Mode"]["Salary"]) and isset($job["Mission"][$block->getID().":".$block->getMeta().":Break"])){
-					$nothing = $job["Mission"][$block->getID().":".$block->getMeta().":Break"];
+				if(isset($job["Mode"]["Salary"]) and isset($job["Mission"][$block->getTypeId().":".$block->getStateId().":Break"])){
+					$nothing = $job["Mission"][$block->getTypeId().":".$block->getStateId().":Break"];
 					$progress = $player_data["Progress"];
 					$goal = $player_data["Goal"];
 					if ($player->hasPermission("job.progress.break") or $player->hasPermission("Job.*")) {
@@ -149,8 +149,8 @@ class Loader extends PluginBase implements Listener{
 					}
 				}
 			}else{
-				if(isset($job["Mission"][$block->getID().":".$block->getMeta().":Break"])){
-					$money = $job["Mission"][$block->getID().":".$block->getMeta().":Break"];
+				if(isset($job["Mission"][$block->getTypeId().":".$block->getStateId().":Break"])){
+					$money = $job["Mission"][$block->getTypeId().":".$block->getStateId().":Break"];
 					if ($player->hasPermission("job.earn.break") or $player->hasPermission("job.*")) {
 						if($money > 0){
 							$this->api->addMoney($player, $money);
@@ -182,8 +182,8 @@ class Loader extends PluginBase implements Listener{
 			$player_data = $this->player->get($player->getName());
 			$job = $this->jobs->get($player_data["JobID"]);
 			if($player_data["Mode"] == "Goal"){
-				if(isset($job["Mode"]["Salary"]) and isset($job["Mission"][$block->getID().":".$block->getMeta().":Place"])){
-					$nothing = $job["Mission"][$block->getID().":".$block->getMeta().":Place"];
+				if(isset($job["Mode"]["Salary"]) and isset($job["Mission"][$block->getTypeId().":".$block->getStateId().":Place"])){
+					$nothing = $job["Mission"][$block->getTypeId().":".$block->getStateId().":Place"];
 					$progress = $player_data["Progress"];
 					$goal = $player_data["Goal"];
 					if ($player->hasPermission("job.progress.place") or $player->hasPermission("job.*")) {
@@ -206,8 +206,8 @@ class Loader extends PluginBase implements Listener{
 					}
 				}
 			}else{
-				if(isset($job["Mission"][$block->getID().":".$block->getMeta().":Place"])){
-					$money = $job["Mission"][$block->getID().":".$block->getMeta().":Place"];
+				if(isset($job["Mission"][$block->getTypeId().":".$block->getStateId().":Place"])){
+					$money = $job["Mission"][$block->getTypeId().":".$block->getStateId().":Place"];
 					if ($player->hasPermission("job.earn.place") or $player->hasPermission("job.*")) {
 						if($money > 0){
 							$this->api->addMoney($player, $money);
