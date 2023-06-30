@@ -1,6 +1,6 @@
 name: Job
-version: 1.9.9 BETA
-api: 4.0.0
+version: 2.0.0+dev
+api: 5.0.0
 main: aero\Job\Loader
 author: aero
 website: https://github.com/XeonMZ/Job
